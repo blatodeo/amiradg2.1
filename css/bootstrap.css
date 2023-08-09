@@ -1,0 +1,222 @@
+/* Nosotros */
+
+ /* FontAwesome for working BootSnippet :> */
+
+ @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+ #team {
+     background: #eee !important;
+ }
+ 
+ 
+ .last-cards{
+     position: relative;
+ }
+ 
+ 
+ 
+ .btn-primary:hover,
+ .btn-primary:focus {
+     background-color: #108d6f;
+     border-color: #108d6f;
+     box-shadow: none;
+     outline: none;
+ }
+ 
+ .btn-primary {
+     color: #fff;
+     background-color: #007b5e;
+     border-color: #007b5e;
+ }
+ 
+ section {
+     padding: 60px 0;
+ }
+ 
+ section .section-title {
+     text-align: center;
+     color: #007b5e;
+     margin-bottom: 50px;
+     text-transform: uppercase;
+ }
+ 
+ #team .card {
+     border: none;
+     background: #ffffff;
+ }
+ 
+ .image-flip:hover .backside,
+ .image-flip.hover .backside {
+     -webkit-transform: rotateY(0deg);
+     -moz-transform: rotateY(0deg);
+     -o-transform: rotateY(0deg);
+     -ms-transform: rotateY(0deg);
+     transform: rotateY(0deg);
+     border-radius: .25rem;
+ }
+ 
+ .image-flip:hover .frontside,
+ .image-flip.hover .frontside {
+     -webkit-transform: rotateY(180deg);
+     -moz-transform: rotateY(180deg);
+     -o-transform: rotateY(180deg);
+     transform: rotateY(180deg);
+ }
+ 
+ .mainflip {
+     -webkit-transition: 1s;
+     -webkit-transform-style: preserve-3d;
+     -ms-transition: 1s;
+     -moz-transition: 1s;
+     -moz-transform: perspective(1000px);
+     -moz-transform-style: preserve-3d;
+     -ms-transform-style: preserve-3d;
+     transition: 1s;
+     transform-style: preserve-3d;
+     position: relative;
+ }
+ 
+ .frontside {
+     position: relative;
+     -webkit-transform: rotateY(0deg);
+     -ms-transform: rotateY(0deg);
+     z-index: 2;
+     margin-bottom: 30px;
+ }
+ 
+ .backside {
+     position: absolute;
+     top: 0;
+     left: 0;
+     background: white;
+     -webkit-transform: rotateY(-180deg);
+     -moz-transform: rotateY(-180deg);
+     -o-transform: rotateY(-180deg);
+     -ms-transform: rotateY(-180deg);
+     transform: rotateY(-180deg);
+     -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+     -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+     box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+ }
+ 
+ .frontside,
+ .backside {
+     -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+     -ms-backface-visibility: hidden;
+     backface-visibility: hidden;
+     -webkit-transition: 1s;
+     -webkit-transform-style: preserve-3d;
+     -moz-transition: 1s;
+     -moz-transform-style: preserve-3d;
+     -o-transition: 1s;
+     -o-transform-style: preserve-3d;
+     -ms-transition: 1s;
+     -ms-transform-style: preserve-3d;
+     transition: 1s;
+     transform-style: preserve-3d;
+ }
+ 
+ .frontside .card,
+ .backside .card {
+     min-height: 250px;
+ }
+ 
+ .backside .card a {
+     font-size: 18px;
+     color: #007b5e !important;
+ }
+ 
+ .frontside .card .card-title,
+ .backside .card .card-title {
+     color: #007b5e !important;
+ }
+ 
+ .frontside .card .card-body img {
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+ }
+
+/* Footer de AMIRA */
+
+footer{
+    background-color: #fff;
+    color: var(--main-color);
+  }
+  
+  footer ul{
+    padding: 0;
+  }
+  
+  .wrap-footer{
+    display: grid;
+    grid-template-columns: 30% 15% 15% 20%;
+    column-gap: 5%;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+  
+  element-footer h5{
+    margin: 1rem 0;
+  }
+  
+  .text-element-footer{
+    line-height: 2;
+  }
+  
+  .text-element-footer li a{
+    color: var(--main-color);
+  }
+  
+  .rrss-element-footer ul{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .rrss-element-footer img{
+    width: 45px;
+  }
+  .rrss-element-footer li{
+    margin-right: 1rem;
+  }
+  
+  .footer-creds{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: #576171;
+    font-size: .9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .legal-creds ul{
+    display: flex;
+  }
+  
+  .legal-creds ul li{
+    padding-right: 1rem;
+  }
+  
+  .legal-creds ul li a{
+    color: #576171;
+  }
+  
+  @media (max-width:768px){
+    .wrap-footer{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  
+  @media (max-width:480px){
+    .wrap-footer{
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+  
+  @media (max-width:320px){
+    .footer-creds{
+      flex-flow: column;
+    }
+  }

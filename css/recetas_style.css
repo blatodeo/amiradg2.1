@@ -1,0 +1,615 @@
+:root{
+    --main-color:#9d9898;
+    --grenn-c:#29981C;
+}
+
+/* Estilos generales */
+html{
+    /* font-family: 'Grape Nuts', cursive; */
+    font-family: 'Grape Nuts', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: inherit
+}
+
+li{
+    list-style: none;
+}
+
+p{
+    font-size: 1.1rem;
+}
+
+h1{
+    font-size: 2.4rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h4{
+    font-size: 1.6rem;
+}
+
+h5{
+    font-size: 1.4rem;
+}
+
+h6{
+    font-size: 1.2rem;
+}
+
+/* Enlaces/Botones */
+
+.cta-main{
+    background-color: var(--grenn-c);
+    padding: 1rem 1rem;
+    color: #fff;
+    font-size: bold;
+    border-radius: 2px;
+}
+
+/* Header AMIRA */
+
+header.main-header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    position: fixed;
+}
+
+.header-wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(to bottom, rgb(0 0 0 / .55), rgb(0 0 0 / .0));
+    z-index: 999;
+}
+
+.wrap-logo-header{
+    display: flex;
+    align-items: center;
+    flex-basis: 15%;
+}
+
+.logo-header{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.logo-header:hover{
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+/* Menu header */
+
+.nav-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-wrap-header{
+    display: flex;
+    flex-basis: 50%;
+}
+
+ul.main-menu{
+    display: flex;
+    width: 100%;
+    z-index: 99;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+ul.main-menu #nav-main-registro{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--grenn-c);
+    color: #fff;
+    border-radius: 6px;
+}
+
+li.menu-item{
+    margin: .75rem;
+    display: flex;
+}
+
+li.menu-item a{
+    padding: .5rem 1rem;
+    color: #fff;
+}
+
+li.menu-item a:hover{
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+i.toggle-menu img{
+    width: 27px;
+    z-index: 99;
+}
+
+i.toggle-menu{
+    display: none;
+    border: none;
+    z-index: 9999;
+}
+
+input#check{
+    display: none;
+}
+
+@media (min-width:880px){
+    .header-wrap{
+        padding: .5rem 5rem;
+    }
+}
+
+@media (min-width:768px){
+    a.logo-header{
+        color: #fff;
+    }
+}
+
+@media (max-width:768px){
+    header.main-header{
+        margin-bottom: 4rem;
+    }
+    .header-wrap{
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        padding: 0;
+        top: 0;
+        z-index: 9999;
+        height: 60px;
+    }
+
+    .wrap-logo-header{
+        position: fixed;
+        z-index: 999;
+        top: 3%;
+        left: 3%;
+    }
+
+    .logo-header, li.menu-item a{
+        color: #333333;
+    }
+
+    i.toggle-menu{
+        display: flex;
+    }
+
+    ul.main-menu, #nav-main-registro{
+        display: none;
+        left: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.main-menu{
+        position: fixed;
+        background-color: #fff;
+    }
+    label.checkbtn{
+        position: fixed;
+        right: 3%;
+        top: 3%;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    #check:checked ~ ul{
+        display: flex;
+        z-index: 9;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        top: 0;
+        font-size: 2rem;
+    }
+}
+
+.btn-receta-search{
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--grenn-c);
+    font-size:1.2rem;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.input-receta-search{
+    background: none;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    font-size:1.2rem;
+    color: #fff;
+}
+
+.input-receta-search::placeholder{
+    color: #fff;
+}
+
+/* Section home page */
+
+.wrap-header{
+    background: linear-gradient(to bottom, rgb(0 0 0 / .55), rgb(0 0 0 / .25)),url(../img/header_fonfo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* background: linear-gradient(to bottom, rgba(4, 184, 4, 0.559), rgba(105, 219, 105, 0.641)) */
+}
+
+.hero-home-page{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-hero-home-page{
+    color: #fff;
+    text-align: center;
+    width: 50%;
+}
+
+.wrap-hero-home-page p{
+    margin-bottom: 2rem;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/wave.png);
+    background-size: 1000px 100px;
+    animation: wave 20s linear infinite;
+}
+
+@keyframes wave{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+@media (max-width:768px){
+    .wrap-hero-home-page{
+    width: 100%;
+    padding: 1rem;
+    } 
+}
+
+/* Tarjetas de recetas */
+
+.section{
+    max-width: 1200px;
+    margin: 8rem auto;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.column-4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.tarjeta-receta{
+    background-repeat: no-repeat;
+    height: 400px;
+    border-radius: 6px;
+    padding: 1rem .5rem;
+    display: flex;
+    align-items: end;
+
+}
+
+.wrap-text_tarjeta-receta{
+    color: #fff;
+    padding: .5rem;
+    border-radius: 6px;
+   /*  background: linear-gradient(to top, rgb(0 0 0 / .5), rgb(0 0 0 / .5)); */
+}  
+
+.wrap-text_tarjeta-receta p{
+    color: #f2f2f2;
+}
+
+.cta-wrap_tarjeta-receta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio_tarjeta-receta span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.cta_tarjeta-receta{
+    background-color: var(--grenn-c);
+    padding: .25rem 1rem;
+    border-radius: 4px;
+}
+
+.cta_tarjeta-receta a{
+    color: #fff;
+    font-weight: bold;
+}
+
+@media (max-width:1200px){
+    .column-4{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media (max-width:880px){
+    .column-4{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width:640px){
+    .column-4{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* section */
+
+CARDS DE 
+
+/* Menu Restaurante */
+.column-3{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.wrap-title-section h2{
+    font-family: 'Grave Nuts', cursive;
+    text-align: center;
+}
+
+
+  
+.menu-amira{
+    color: #fff;
+    text-align: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    margin-left: 10px;
+}
+
+hr{
+    background: var(--grenn-c);
+    height: 2px;
+    width: 30px;
+    border: none;
+}
+
+.precio-menu{
+    font-weight: bold;
+}
+
+.precio-menu span{
+    font-size: 2rem;
+}
+  
+@media (max-width:880px){
+    .column-3{
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width:640px){
+    .column-3{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+/* Galeria de imagenes */
+
+.imagen-galeria, .imagen-galeria img{
+    max-width: 275px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width:880px){
+    .galeria-platos{
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+    }
+  }
+
+/* Tarjetas de Blog */
+article.card{
+    max-width: 350px;
+    background-color: #f8f8f8;
+    margin: 1rem;
+    box-shadow: 0px 0px 12px #d7d7d7;
+}
+.header-card{
+    display: flex;
+}
+.header-card img{
+    border-radius: 8px 8px 0 0;
+    max-height: 200px;
+    height: 200px;
+    width: 100%;
+}
+
+.categoria-card{
+    margin-top: 1rem;
+}
+
+.categoria-card span{
+    background: var(--grenn-c);
+    border-radius: 4px;
+    padding: .2rem .5rem;
+    color: #fff;
+}
+
+.card footer{
+    display: flex;
+    flex-flow: column;
+    padding: 0 1rem;
+}
+
+.perfil-card{
+    display: flex;
+    align-items: center;
+}
+
+.img-perfil-card{
+    display: flex;
+}
+
+.img-perfil-card img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1rem 1rem 1rem 0;
+}
+.text-perfil-card{
+    display: flex;
+    flex-flow: column;
+}
+.text-perfil-card span:nth-child(2){
+    color: #cfcfcf; 
+}
+.card-wrap{
+    display: flex;
+    flex-flow: wrap;
+}
+  
+@media (max-width:768px){
+    .card-wrap{
+        justify-content: center;
+    }
+}
+
+/* Footer de AMIRA */
+
+footer{
+    background-color: #fff;
+    color: var(--main-color);
+  }
+  
+  footer ul{
+    padding: 0;
+  }
+  
+  .wrap-footer{
+    display: grid;
+    grid-template-columns: 30% 25% 15% 10%;
+    column-gap: 5%;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+  
+  element-footer h5{
+    margin: 1rem 0;
+  }
+  
+  .text-element-footer{
+    line-height: 2;
+  }
+  
+  .text-element-footer li a{
+    color: var(--main-color);
+  }
+  
+  .rrss-element-footer ul{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .rrss-element-footer img{
+    width: 45px;
+  }
+  .rrss-element-footer li{
+    margin-right: 1rem;
+  }
+  
+  .footer-creds{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: #576171;
+    font-size: .9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .legal-creds ul{
+    display: flex;
+  }
+  
+  .legal-creds ul li{
+    padding-right: 1rem;
+  }
+  
+  .legal-creds ul li a{
+    color: #576171;
+  }
+  
+  @media (max-width:768px){
+    .wrap-footer{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  
+  @media (max-width:480px){
+    .wrap-footer{
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+  
+  @media (max-width:320px){
+    .footer-creds{
+      flex-flow: column;
+    }
+  }
