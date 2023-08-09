@@ -1,0 +1,52 @@
+
+
+
+
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Se realiza el correspondiente formulario de registro -->
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioRegistro"  (keyup.enter)="guardar()"> <!--Función que será ejecutada al presionar el boton 'guardar' -->
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input  formControlName="nombre"> <!--Validar variable 'nombre' -->
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" ></ion-input> <!--Validar variable 'password' -->
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <ion-input formControlName="confirmacionPassword" type="password"></ion-input> <!--Validar variable 'confirmacionPassword' -->
+        </ion-item>
+
+
+      </form>
+      <br>
+      <ion-button (click)="guardar()" color="dark" routerLink="/login">  <!--Ejecuta función guardada en registro.ts -->
+        Registrarse
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

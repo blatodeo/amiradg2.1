@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="customers"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar {{id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input  [(ngModel)]="datos.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-select type="number" [(ngModel)]="datos.categoria" placeholder="Selecciona Categoria">
+        <ion-select-option value="2">Lacteos</ion-select-option>
+        <ion-select-option value="8">Carnes</ion-select-option>
+        <ion-select-option value="6">Frutas</ion-select-option>
+        <ion-select-option value="9">Bebidas</ion-select-option>
+        <ion-select-option value="5">Grasas</ion-select-option>
+        <ion-select-option value="1">Aperitivos</ion-select-option>
+        <ion-select-option value="11">Confiteria</ion-select-option>
+
+      </ion-select>
+  </ion-item>
+
+
+    
+    <ion-item>
+      <ion-label floating>Vencimiento</ion-label>
+      <ion-input type="date" [(ngModel)]="datos.vencimiento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Existencias</ion-label>
+      <ion-input type="number" [(ngModel)]="datos.existencias"></ion-input>
+    </ion-item>
+
+
+
+  </ion-list>
+
+  <div class="contenedor-botones">
+    <ion-button class="boton-adaptado"  (click)="editar_prod()" color="success">Actualizar</ion-button
+    >
+  </div>
+
+</ion-content>

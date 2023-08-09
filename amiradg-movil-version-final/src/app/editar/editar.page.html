@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar {{id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input
+        placeholder=""
+        [(ngModel)]="datos.nombre"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Preparacion</ion-label>
+      <ion-textarea #hvUserPost type="text" [autoGrow]="true"      type="text" 
+        [(ngModel)]="datos.preparacion"
+      ></ion-textarea>     </ion-item>
+
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-select
+        type="number"
+        [(ngModel)]="datos.categoria"
+        placeholder="Selecciona Categoria"
+      >
+        <ion-select-option value="Entradas">Entradas</ion-select-option>
+        <ion-select-option value="Bebidas">Bebidas</ion-select-option>
+        <ion-select-option value="Plato Fuerte">Plato fuerte</ion-select-option>
+        <ion-select-option value="Postres">Postres</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Imagen</ion-label>
+      <ion-input type="file" [(ngModel)]="datos.imagen"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="contenedor-botones">
+    <ion-button class="boton-adaptado" (click)="update()" color="success"
+      >Actualizar</ion-button
+    >
+  </div>
+</ion-content>

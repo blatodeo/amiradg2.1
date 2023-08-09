@@ -1,0 +1,105 @@
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<!-- Aqui empieza el header
+ -->
+
+ <div class="ion-page" id="main-content">
+
+
+<ion-header>
+  <ion-toolbar color="success">
+    <center><ion-title>Inventario</ion-title></center>
+  </ion-toolbar>
+<!-- Se llama la funcion para buscar los productos
+ -->
+  <ion-toolbar color="light">
+    <ion-searchbar animated="true" (ionChange)="buscar($event)" placeholder="Buscar producto"></ion-searchbar>
+  </ion-toolbar>
+
+  
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <center>
+    <ion-img
+      style="width: 80px; height: 80px"
+      src="https://senacertificados.co/wp-content/uploads/2021/10/Logo-de-SENA-png-verde-300x300-1.png"
+    ></ion-img>
+  </center>
+
+<ion-card wrap *ngFor="let item of datos | filtro: textoBuscar: 'nombre'"> <!-- Aqui se llama la funcion de la
+   pagina 'customers.ts' 
+  la cual llama los items consultados en la base de datos, 
+  de esta forma se muestran en los cards los items correspondientes
+-->
+  <ion-card-header>
+    <ion-card-title><center>{{item.id}}</center></ion-card-title>
+    <ion-card-title><center>{{item.nombre}}</center></ion-card-title>
+    <ion-card-subtitle><center>Categoria: {{item.categoria}}</center></ion-card-subtitle>
+    <ion-card-subtitle><center>Vencimiento: {{item.vencimiento}}</center></ion-card-subtitle>
+    <ion-card-subtitle><center>Existencias: {{item.existencias}}</center></ion-card-subtitle>
+
+    </ion-card-header>
+    <ion-card-content>
+
+    
+  </ion-card-content>
+
+<!-- Botones eliminar y editar-->  
+  <div class="contenedor-botones"> 
+    <ion-col><center><ion-button class="boton-adaptado" size="large" color="warning"  (click)="eliminar_prod(item.id)" ><ion-icon name="trash" color="light"></ion-icon></ion-button></center></ion-col>
+    <ion-col><center><ion-button class="boton-adaptado" size="large" color="success" [routerLink]="['/', 'editar-prod', item.id]" (click)="editar_prod(item.id)"><ion-icon name="create"></ion-icon></ion-button></center></ion-col>
+  </div>
+</ion-card>    
+
+
+
+  
+
+    
+  
+  
+  
+
+<!-- Aqui empieza el boton desplegable con varias rutas-->  
+
+<ion-fab slot="fixed"  vertical="bottom" horizontal="start">
+<ion-fab-button id="botonAñadir"  routerLink="/form-prod" color="success"><ion-icon name="add"></ion-icon></ion-fab-button>
+</ion-fab>
+
+
+<ion-fab slot="fixed"  vertical="bottom" horizontal="end">
+  <ion-fab-button>
+    <ion-icon name="chevron-up"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button routerLink="/home" color="dark" (click)="do1()" data-desc="Recetas">
+      <ion-icon name="list"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button routerLink="/customers" color="dark" (click)="do2()" data-desc="Inventarios">
+      <ion-icon name="nutrition"></ion-icon>
+    </ion-fab-button>        
+    <ion-fab-button color="danger" (click)="eli()" data-desc="Cerrar Sesion">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab-list>
+</ion-fab>
+
+  
+
+
+</ion-content>
+
+

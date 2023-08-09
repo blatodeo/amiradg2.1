@@ -1,0 +1,122 @@
+<!-- Aqui empieza el header
+ -->
+
+<div class="ion-page" id="main-content">
+  <ion-header no-border>
+    <ion-toolbar color="success">
+      <center><ion-title>Recetas</ion-title></center>
+    </ion-toolbar>
+
+    <ion-toolbar color="light">
+      <ion-searchbar
+        animated="true"
+        (ionChange)="buscar($event)" 
+        placeholder="Buscar receta"
+      ><!-- Se llama la funcion 'buscar'--></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Aqui termina el header
+ -->
+
+  <!-- Aqui empiezan los cards
+ -->
+
+  <ion-content [fullscreen]="true">
+    <center>
+      <ion-img
+        style="width: 80px; height: 80px"
+        src="https://senacertificados.co/wp-content/uploads/2021/10/Logo-de-SENA-png-verde-300x300-1.png"
+      ></ion-img>
+    </center>
+
+
+    <ion-card wrap *ngFor="let item of datos | filtro: textoBuscar: 'nombre'"> <!-- Llama los items desde el 'home.ts'-->
+  
+      <img alt="" [src]="item.imagen" /> 
+
+      <ion-card-header>
+        <h1>{{item.nombre}}</h1>
+
+        <ion-accordion-group #accordionGroup>
+          <ion-accordion value="first" #accordionGroup>
+            <ion-item slot="header" color="light">
+              <ion-label>Contenido</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content"><ion-card-subtitle>ID: {{item.id}}</ion-card-subtitle>
+            </div>
+            <div class="ion-padding" slot="content"><ion-card-subtitle>Categoria: {{item.categoria}}</ion-card-subtitle>
+            </div>
+            <div class="ion-padding" slot="content"><ion-card-subtitle>Preparacion: {{item.preparacion}}</ion-card-subtitle>
+            </div>
+
+
+          </ion-accordion>
+          </ion-accordion-group>
+      
+        
+    </ion-card-header>
+
+      <div class="contenedor-botones">
+        <ion-col
+          ><center> <!-- Boton y funcion eliminar-->
+            <ion-button
+              class="boton-adaptado"
+              size="large"
+              color="warning"
+              (click)="eliminar(item.id)"
+              ><ion-icon name="trash" color="light"></ion-icon
+            ></ion-button></center
+        ></ion-col>
+        <ion-col
+          ><center>
+            <ion-button
+              class="boton-adaptado"
+              size="large"
+              color="success"
+              [routerLink]="['/', 'editar', item.id]"
+              (click)="editPost(item.id)"
+              ><!-- Boton y funcion para especificar los datos del id, 
+                además una vez presionado se redirige a la pagina 'editar' -->
+              <ion-icon name="create"></ion-icon
+            ></ion-button></center
+        ></ion-col>
+      </div>
+    </ion-card>
+
+    <!-- Terminan los cards
+ -->
+
+    <!--   Empieza el boton agregar
+ -->
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+      <ion-fab-button id="botonAñadir" routerLink="/form" color="success"
+        ><ion-icon name="add"></ion-icon
+      ></ion-fab-button>
+    </ion-fab>
+
+    <ion-fab slot="fixed"  vertical="bottom" horizontal="end"> <!-- Boton desplegable con varias rutas-->
+      <ion-fab-button>
+        <ion-icon name="chevron-up"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button color="dark" (click)="do1()" data-desc="Recetas">
+          <ion-icon name="list"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button routerLink="/customers" color="dark" (click)="do2()" data-desc="Inventarios">
+          <ion-icon name="nutrition"></ion-icon>
+        </ion-fab-button>        
+        <ion-fab-button color="danger" (click)="eli()" data-desc="Cerrar Sesion">
+          <ion-icon name="log-out"></ion-icon>
+        </ion-fab-button>
+
+      </ion-fab-list>
+    </ion-fab>
+  </ion-content>
+  -->
+  <!-- Termina boton agregar
+ -->
+
+  <!-- Empieza barra de navegacion inferior
+ -->
+</div>
